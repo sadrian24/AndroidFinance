@@ -1,5 +1,7 @@
 package com.adrian.androidfinance.core.interfaces;
 
+import com.adrian.androidfinance.core.exceptions.CurrencyExceptions;
+
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.List;
@@ -19,7 +21,7 @@ public interface Storage {
 
     Map<Currency, BigDecimal> getCurrencyAmounts();
 
-    BigDecimal getAmount(Currency currency);
+    BigDecimal getAmount(Currency currency) throws CurrencyExceptions;
 
     BigDecimal getApproxAmount(Currency currency);
 

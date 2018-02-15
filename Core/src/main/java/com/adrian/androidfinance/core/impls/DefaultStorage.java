@@ -1,5 +1,6 @@
 package com.adrian.androidfinance.core.impls;
 
+import com.adrian.androidfinance.core.exceptions.CurrencyExceptions;
 import com.adrian.androidfinance.core.interfaces.Storage;
 
 import java.math.BigDecimal;
@@ -73,7 +74,8 @@ public class DefaultStorage implements Storage{
     }
 
     @Override
-    public BigDecimal getAmount(Currency currency) {
+    public BigDecimal getAmount(Currency currency) throws CurrencyExceptions {
+        checkCurrencyExist(currency);
         return currencyAmounts.get(currency);
     }
 
@@ -95,5 +97,12 @@ public class DefaultStorage implements Storage{
         BigDecimal newValue = oldAmount.subtract(amount);
         currencyAmounts.put(currency, newValue);
 
+    }
+
+    // Check if currency exist
+    private void checkCurrencyExist(Currency currency) throws CurrencyExceptions{
+        if (!currencyAmounts.containsKey(currency)){
+            throw new CurrencyExceptions("Currency "+currency+" not exist");
+        }
     }
 }
