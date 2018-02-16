@@ -7,15 +7,17 @@ import java.util.List;
  */
 
 public interface TreeNode {
+    String getName();
+
     long getId();
 
     void addChild(TreeNode child);
 
     void removeChild(TreeNode child);
 
-    List<TreeNode> getChilda();
+    List<TreeNode> getChilds();
 
-    TreeNode getChild();
+    TreeNode getChild(long id);
 
     TreeNode getParent();
 

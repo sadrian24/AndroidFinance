@@ -1,5 +1,6 @@
 package com.adrian.androidfinance.core.impls;
 
+import com.adrian.androidfinance.core.abstracts.AbstractTreeNode;
 import com.adrian.androidfinance.core.exceptions.AmountExceptions;
 import com.adrian.androidfinance.core.exceptions.CurrencyExceptions;
 import com.adrian.androidfinance.core.interfaces.Storage;
@@ -15,9 +16,8 @@ import java.util.Map;
  * Created by Adrian on 14.02.2018.
  */
 
-public class DefaultStorage implements Storage{
+public class DefaultStorage extends AbstractTreeNode implements Storage{
 
-    private String name;
     private Map<Currency, BigDecimal> currencyAmounts = new HashMap<>();
     private List<Currency> currencyList = new ArrayList<>();
 
@@ -27,11 +27,15 @@ public class DefaultStorage implements Storage{
 
 
     public DefaultStorage(String name) {
-        this.name = name;
+        super(name);
+    }
+
+    public DefaultStorage(long id, String name) {
+        super(id, name);
     }
 
     public DefaultStorage(String name, Map<Currency, BigDecimal> currencyAmounts, List<Currency> currencyList) {
-        this.name = name;
+        super(name);
         this.currencyAmounts = currencyAmounts;
         this.currencyList = currencyList;
     }
@@ -52,14 +56,6 @@ public class DefaultStorage implements Storage{
         return currencyList;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Map<Currency, BigDecimal> getCurrencyAmounts() {
