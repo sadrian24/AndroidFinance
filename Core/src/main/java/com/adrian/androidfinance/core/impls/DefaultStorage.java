@@ -75,7 +75,9 @@ public class DefaultStorage implements Storage{
 
     @Override
     public void deleteCurrency(Currency currency) throws CurrencyExceptions {
+
         checkCurrencyExist(currency);
+
         if (!currencyAmounts.get(currency).equals(BigDecimal.ZERO)){
             throw new CurrencyExceptions("Can't delete currency with amount");
         }
