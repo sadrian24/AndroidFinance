@@ -5,6 +5,7 @@ import com.adrian.androidfinance.core.exceptions.CurrencyExceptions;
 import com.adrian.androidfinance.core.interfaces.Storage;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Currency;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +19,12 @@ public class DefaultStorage implements Storage{
 
     private String name;
     private Map<Currency, BigDecimal> currencyAmounts = new HashMap<>();
-    private List<Currency> currencyList;
+    private List<Currency> currencyList = new ArrayList<>();
+
+    public DefaultStorage(){
+
+    }
+
 
     public DefaultStorage(String name) {
         this.name = name;
