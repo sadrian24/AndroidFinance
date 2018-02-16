@@ -1,5 +1,6 @@
 package com.adrian.androidfinance.core.interfaces;
 
+import com.adrian.androidfinance.core.exceptions.AmountExceptions;
 import com.adrian.androidfinance.core.exceptions.CurrencyExceptions;
 
 import java.math.BigDecimal;
@@ -27,20 +28,20 @@ public interface Storage {
 
 
     // Lucru cu bilantu
-    void changeAmount(BigDecimal amount, Currency currency);
+    void changeAmount(BigDecimal amount, Currency currency) throws CurrencyExceptions;
 
-    void addAmount(BigDecimal amount, Currency currency);
+    void addAmount(BigDecimal amount, Currency currency) throws CurrencyExceptions;
 
-    void expenseAmount(BigDecimal amount, Currency currency);
+    void expenseAmount(BigDecimal amount, Currency currency) throws CurrencyExceptions, AmountExceptions;
 
 
 
     // lucru cu Valute
-    void addCurrency(Currency currency); // Add Currency
+    void addCurrency(Currency currency) throws CurrencyExceptions; // Add Currency
 
-    void deleteCurrency(Currency currency); // Delete Currency
+    void deleteCurrency(Currency currency) throws CurrencyExceptions; // Delete Currency
 
-    Currency getCurrency(String code); // Get Currency by Code
+    Currency getCurrency(String code) throws CurrencyExceptions; // Get Currency by Code
 
     List<Currency> getAvailableCurrencies(); // Get all currency
 
