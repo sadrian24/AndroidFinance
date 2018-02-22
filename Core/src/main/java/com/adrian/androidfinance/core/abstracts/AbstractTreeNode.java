@@ -42,6 +42,7 @@ public abstract class AbstractTreeNode implements TreeNode {
 
     @Override
     public void addChild(TreeNode child) {
+        child.setParent(this);
         childs.add(child);
     }
 
