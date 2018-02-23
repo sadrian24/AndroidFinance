@@ -1,8 +1,5 @@
 package com.adrian.androidfinance.core.objects;
 
-/**
- * Created by Adrian on 22.02.2018.
- */
 
 public class OperationType {
 
