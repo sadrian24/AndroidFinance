@@ -2,8 +2,7 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('src/main/sqlite-jdbc-3.21.0.jar')
+    implementation ('org.xerial:sqlite-jdbc:3.+')
 }
-
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
