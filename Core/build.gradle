@@ -1,9 +1,11 @@
 apply plugin: 'java-library'
 
+repositories {
+    mavenCentral()
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation ('org.xerial:sqlite-jdbc:+')
-    compile 'org.xerial:sqlite-jdbc:+'
+    compile 'org.xerial:sqlite-jdbc:3.+'
 }
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
