@@ -1,4 +1,4 @@
 package com.adrian.androidfinance.core.DAO.interfaces;
 
-public interface StorageDAO {
+public interface StorageDAO extends CommonDAO {
 }
