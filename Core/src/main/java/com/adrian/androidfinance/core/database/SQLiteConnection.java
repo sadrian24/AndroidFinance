@@ -16,7 +16,7 @@ public class SQLiteConnection {
             Class.forName("org.sqlite.JDBC").newInstance();// можно эту строчку удалить - драйвер автоматически будет найден
 
             // создание подключение к базе данных по пути, указанному в урле
-            String url = "jdbc:sqlite:c:\\data\\money.db";
+            String url = "jdbc:sqlite:money.db";
 
             if (con==null) con = DriverManager.getConnection(url);
 
