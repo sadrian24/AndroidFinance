@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+/.idea/codeStyles/Project.xml
+src/main/sqlite-jdbc-3.21.0.jar
