@@ -5,7 +5,7 @@ repositories {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'org.xerial:sqlite-jdbc:3.+'
+    implementation 'org.xerial:sqlite-jdbc:3.+'
 }
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
