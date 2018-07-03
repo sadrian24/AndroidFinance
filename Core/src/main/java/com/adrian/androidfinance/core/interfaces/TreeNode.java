@@ -2,10 +2,6 @@ package com.adrian.androidfinance.core.interfaces;
 
 import java.util.List;
 
-/**
- * Created by Adrian on 2/16/2018.
- */
-
 public interface TreeNode {
     String getName();
 
@@ -22,5 +18,7 @@ public interface TreeNode {
     TreeNode getParent();
 
     void setParent(TreeNode parent);
+
+    boolean hasChilds();
 
 }

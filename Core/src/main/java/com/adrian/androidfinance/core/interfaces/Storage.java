@@ -8,15 +8,9 @@ import java.util.Currency;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Adrian on 14.02.2018.
- */
-
-
 // TODO de schimbat tipul BigDecimal cu un class care lucreaza cu banii (Money)
-public interface Storage {
+public interface Storage extends TreeNode {
 
-    String getName();
 
     // Obtinerea bilantului
 

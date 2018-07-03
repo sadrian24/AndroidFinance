@@ -111,6 +111,11 @@ public abstract class AbstractTreeNode implements TreeNode {
     }
 
     @Override
+    public boolean hasChilds(){
+        return !childs.isEmpty();
+    }
+
+    @Override
     public String toString() {
         return name;
     }
